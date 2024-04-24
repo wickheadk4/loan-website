@@ -33,7 +33,7 @@
         <div class="overlay">
             <div class="container">
                 <div class="row d-flex header-area">
-                    <nav class="navbar d-flex justify-content-between navbar-expand-lg navbar-dark">
+                    <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="index.html">
                             <img src="assets/images/vc-logo.png" class="logo" alt="logo">
                         </a>
@@ -77,7 +77,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-header text-center">
-                            <h5 class="sub-title">Quick & easy Education loan</h5>
+                            <h5 class="sub-title">Quick & easy loan</h5>
                             <h2 class="title">Take One Step Closer to Your Dream.</h2>
                             <p>Get loans approved within days with transparent lending criteria and transparent processes.</p>
                         </div>
@@ -91,6 +91,10 @@
                                 <p>Please fill the form below. We will get in touch with you within 1-2 business days, to request all necessary details</p>
                             </div>
                             <form action="#">
+                                <div style="padding: 20px 0px;">
+                                    <h4>Personal Information</h4>
+                                </div>
+                                
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="single-input">
@@ -122,7 +126,26 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="single-input">
-                                            <label for="address">address*</label>
+                                            <label for="dob">Date of Birth*</label>
+                                            <input type="text" id="dob" placeholder="MM-DD-YYYY" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="gender">Gender*</label>
+                                            <select id="gender" name="gender" required>
+                                                <option value="Male">Select One</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="address">Address*</label>
                                             <input type="text" id="address" placeholder="123, Example St" required>
                                         </div>
                                     </div>
@@ -140,16 +163,146 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="col-12">
+                                        <div class="single-input">
+                                            <label for="social_number">Social Security Number*</label>
+                                            <input type="text" id="social_number" placeholder="123 45 6789" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-6">
                                         <div class="single-input">
-                                            <label for="amount">Loan amount</label>
-                                            <input type="text" id="amount" placeholder="Ex. $8,000 USD">
+                                            <label for="home_ownership">Home Ownership*</label>
+                                            <select id="home_ownership" name="home_ownership" required>
+                                                <option value="">Select One</option>
+                                                <option value="Own - Free and Clear">Own - Free and Clear</option>
+                                                <option value="Own - with Mortgage">Own - with Mortgage</option>
+                                                <option value="Rent">Rent</option>
+                                                <option value="Lease">Lease</option>
+                                                <option value="Living with Family">Living with Family</option>
+                                                <option value="Other">Other</option>
+                                              </select>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="single-input">
-                                            <label for="term">Loan term</label>
-                                            <input type="text" id="term" placeholder="Ex. 12 months">
+                                            <label for="residency">Years of Residency*</label>
+                                            <input type="text" id="residency" placeholder="Ex. 5 years" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="employment_status">Employment Status*</label>
+                                            <select id="employment_status" name="home_ownership" required>
+                                                <option value="">Select One</option>
+                                                <option value="Employed">Employed</option>
+                                                <option value="Self-Employed">Self-Employed</option>
+                                                <option value="Unemployed">Unemployed</option>
+                                                <option value="Student">Student</option>
+                                              </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="monthly_income">Monthly Income*</label>
+                                            <input type="text" id="monthly_income" placeholder="Ex. $8,000 USD" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="padding: 20px 0px;">
+                                    <h4>Loan Details</h4>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="income">Source of Income*</label>
+                                            <input type="text" id="income" placeholder="doctor" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="amount">Loan Amount*</label>
+                                            <input type="text" id="amount" placeholder="Ex. $8,000 USD" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="phone">Phone*</label>
+                                            <input type="text" id="phone" placeholder="(123) 480 - 3540" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="email">Email*</label>
+                                            <input type="text" id="email" placeholder="username@domain.com" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="single-input">
+                                            <h6>Period</h6>
+                                            <div class="radio-area d-flex">
+                                                <label class="single-radio">Yes
+                                                    <input type="radio" checked="checked" name="period">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="single-radio">No
+                                                    <input type="radio" name="period">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="dob">Date of Birth*</label>
+                                            <input type="text" id="dob" placeholder="MM-DD-YYYY" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="ownership">Home Ownership Type*</label>
+                                            <input type="text" id="ownership" placeholder="Ex. " required>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="residency">Years of Residency*</label>
+                                            <input type="text" id="residency" placeholder="Ex. 1" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="income">Source of Income*</label>
+                                            <input type="text" id="income" placeholder="doctor" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="amount">Loan Amount*</label>
+                                            <input type="text" id="amount" placeholder="Ex. $8,000 USD" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="single-input d-flex align-items-center">
+                                            <div class="checkbox_wrapper">
+                                                <input type="checkbox" />
+                                                <label></label>
+                                            </div>
+                                            <span class="check_span">By clicking submit, you agree to Bankio's Privacy Policy, T&C & E-sign and Communication Authorization.</span>
                                         </div>
                                     </div>
                                 </div>
