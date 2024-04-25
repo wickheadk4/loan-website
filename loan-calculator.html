@@ -185,8 +185,8 @@
                                 <h2 class="mb-60" id="monthlyPayment">$0</h2>
                                 <div class="info-block mb-60 d-flex align-items-center justify-content-between">
                                     <div class="info-single text-center">
-                                        <span>Amount</span>
-                                        <h6 id="loan-amount">$0</h6>
+                                        <span>Repayment</span>
+                                        <h6 id="repayment">$0</h6>
                                     </div>
                                     <div class="info-single text-center">
                                         <span>APR</span>
@@ -312,34 +312,7 @@
         <!-- Footer Area End -->
 
         <!--==================================================================-->
-        <script>
-            function calculate() {
-                var apr_dict = {
-                        personal: 4.5,
-                        bad_credit: 3.7,
-                        payday: 4.3,
-                        auto: 6.8,
-                        retirement: 5.6,
-                        consolidation: 5.8
-                        };
-            var loanAmount = parseFloat(document.getElementById("loanAmount").value);
-            var loanType = document.getElementById("loanType").value;
-            var apr = apr_dict[loanType];// parseFloat(document.getElementById("apr").value);
-            
-            var loanTerm = parseFloat(document.querySelector('input[name="loanTerm"]:checked').value);
-                
-            var monthlyInterestRate = apr / 12 / 100; 
-            var numerator = loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, loanTerm);
-            var denominator = Math.pow(1 + monthlyInterestRate, loanTerm) - 1;
-            var monthlyPayment = numerator / denominator;
-
-            document.getElementById("monthlyPayment").innerHTML = "$" + monthlyPayment.toFixed(2);
-            document.getElementById("loan-amount").innerHTML = "$" + document.getElementById("loanAmount").value;
-            document.getElementById("loan-term").innerHTML = loanTerm + " months";
-            document.getElementById("APR").innerHTML = apr + "%";
-            }
         
-          </script>
         <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery-ui.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>

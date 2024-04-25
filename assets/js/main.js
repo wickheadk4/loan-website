@@ -78,4 +78,32 @@ $(function ($) {
     });
     
   });
+
 });
+
+function calculate() {
+  var apr_dict = {
+          personal: 4.5,
+          bad_credit: 3.7,
+          payday: 4.3,
+          auto: 6.8,
+          retirement: 5.6,
+          consolidation: 5.8
+          };
+  var loanAmount = parseFloat(document.getElementById("loanAmount").value);
+  var loanType = document.getElementById("loanType").value;
+  var apr = apr_dict[loanType];
+
+  var loanTerm = parseFloat(document.querySelector('input[name="loanTerm"]:checked').value);
+      
+  var monthlyInterestRate = apr / 12 / 100; 
+  var numerator = loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, loanTerm);
+  var denominator = Math.pow(1 + monthlyInterestRate, loanTerm) - 1;
+  var monthlyPayment = numerator / denominator;
+  var repayment = monthlyPayment * loanTerm;
+
+  document.getElementById("monthlyPayment").innerHTML = "$" + monthlyPayment.toFixed(2);
+  document.getElementById("repayment").innerHTML = "$" + repayment.toFixed(2);
+  document.getElementById("loan-term").innerHTML = loanTerm + " months";
+  document.getElementById("APR").innerHTML = apr + "%";
+}
