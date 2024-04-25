@@ -91,200 +91,218 @@
                                 <p>Please fill the form below. We will get in touch with you within 1-2 business days, to request all necessary details</p>
                             </div>
                             <form action="#">
-                                <div style="padding: 20px 0px;">
-                                    <h4>Personal Information</h4>
+                                <div id="step1" class="form-step">
+                                    <div style="padding: 20px 0px;">
+                                        <h4>Step 1. Personal Information</h4>
+                                    </div>
+                                
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="fname">First Name*</label>
+                                                <input type="text" id="fname" placeholder="John" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="lname">Last Name*</label>
+                                                <input type="text" id="lname" placeholder="Doe" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="dob">Date of Birth*</label>
+                                                <input type="text" id="dob" placeholder="MM-DD-YYYY" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="gender">Gender*</label>
+                                                <select id="gender" name="gender" required>
+                                                    <option value="Male">Select One</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="single-input">
+                                                <label for="address">Address*</label>
+                                                <input type="text" id="address" placeholder="123, Example St" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div class="single-input">
+                                                <label for="state">State*</label>
+                                                <input type="text" id="state" placeholder="California" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div class="single-input">
+                                                <label for="city">City*</label>
+                                                <input type="text" id="city" placeholder="Los Angeles" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div class="single-input">
+                                                <label for="zip">Zip*</label>
+                                                <input type="text" id="zip" placeholder="10001">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="phone">Phone*</label>
+                                                <input type="text" id="phone" placeholder="(123) 480 - 3540" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="email">Email*</label>
+                                                <input type="text" id="email" placeholder="username@domain.com" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-area text-center">
+                                        <button class="cmn-btn" type="button" onclick="nextStep(1)">Next</button>
+                                    </div>
+                                </div>
+                                <div id="step2" class="form-step" style="display:none;">
+                                    <div style="padding: 20px 0px;">
+                                        <h4>Step 2. Employment and Loan Information</h4>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="home_ownership">Home Ownership*</label>
+                                                <select id="home_ownership" name="home_ownership" required>
+                                                    <option value="">Select One</option>
+                                                    <option value="Own - Free and Clear">Own - Free and Clear</option>
+                                                    <option value="Own - with Mortgage">Own - with Mortgage</option>
+                                                    <option value="Rent">Rent</option>
+                                                    <option value="Lease">Lease</option>
+                                                    <option value="Living with Family">Living with Family</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="residency">Years of Residency*</label>
+                                                <input type="text" id="residency" placeholder="Ex. 5 years" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="employment_status">Employment Status*</label>
+                                                <select id="employment_status" name="home_ownership" required>
+                                                    <option value="">Select One</option>
+                                                    <option value="Employed">Employed</option>
+                                                    <option value="Self-Employed">Self-Employed</option>
+                                                    <option value="Unemployed">Unemployed</option>
+                                                    <option value="Student">Student</option>
+                                                    <option value="Retired">Retired</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="monthly_income">Monthly Income*</label>
+                                                <input type="text" id="monthly_income" placeholder="Ex. $8,000 USD" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="loan_amount">Loan Amount*</label>
+                                                <input type="text" id="loan_amount" placeholder="Ex. $8,000 USD" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="loan_purpose">Loan Purpose*</label>
+                                                <input type="text" id="loan_purpose" placeholder="Education" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-area text-center">
+                                        <button class="cmn-btn" type="button" onclick="prevStep(2)">Previous</button>
+                                        <button class="cmn-btn" type="button" onclick="nextStep(2)">Next</button>
+                                    </div>
                                 </div>
                                 
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="fname">First Name*</label>
-                                            <input type="text" id="fname" placeholder="John" required>
-                                        </div>
+                                <div id="step3" class="form-step" style="display:none;">
+                                    <div style="padding: 20px 0px;">
+                                        <h4>Step 3. Identity Verification</h4>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="lname">Last Name*</label>
-                                            <input type="text" id="lname" placeholder="Doe" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="dob">Date of Birth*</label>
-                                            <input type="text" id="dob" placeholder="MM-DD-YYYY" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="gender">Gender*</label>
-                                            <select id="gender" name="gender" required>
-                                                <option value="Male">Select One</option>
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
-                                                <option value="Other">Other</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="single-input">
-                                            <label for="address">Address*</label>
-                                            <input type="text" id="address" placeholder="123, Example St" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="single-input">
-                                            <label for="state">State*</label>
-                                            <input type="text" id="state" placeholder="California" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="single-input">
-                                            <label for="city">City*</label>
-                                            <input type="text" id="city" placeholder="Los Angeles" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="single-input">
-                                            <label for="zip">Zip*</label>
-                                            <input type="text" id="zip" placeholder="10001">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="phone">Phone*</label>
-                                            <input type="text" id="phone" placeholder="(123) 480 - 3540" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="email">Email*</label>
-                                            <input type="text" id="email" placeholder="username@domain.com" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="home_ownership">Home Ownership*</label>
-                                            <select id="home_ownership" name="home_ownership" required>
-                                                <option value="">Select One</option>
-                                                <option value="Own - Free and Clear">Own - Free and Clear</option>
-                                                <option value="Own - with Mortgage">Own - with Mortgage</option>
-                                                <option value="Rent">Rent</option>
-                                                <option value="Lease">Lease</option>
-                                                <option value="Living with Family">Living with Family</option>
-                                                <option value="Other">Other</option>
-                                              </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="residency">Years of Residency*</label>
-                                            <input type="text" id="residency" placeholder="Ex. 5 years" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="employment_status">Employment Status*</label>
-                                            <select id="employment_status" name="home_ownership" required>
-                                                <option value="">Select One</option>
-                                                <option value="Employed">Employed</option>
-                                                <option value="Self-Employed">Self-Employed</option>
-                                                <option value="Unemployed">Unemployed</option>
-                                                <option value="Student">Student</option>
-                                                <option value="Retired">Retired</option>
-                                              </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="monthly_income">Monthly Income*</label>
-                                            <input type="text" id="monthly_income" placeholder="Ex. $8,000 USD" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="loan_amount">Loan Amount*</label>
-                                            <input type="text" id="loan_amount" placeholder="Ex. $8,000 USD" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="loan_purpose">Loan Purpose*</label>
-                                            <input type="text" id="loan_purpose" placeholder="Education" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding: 20px 0px;">
-                                    <h4>Identity Verification</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="single-input">
-                                            <label for="social_number">Social Security Number*</label>
-                                            <input type="text" id="social_number" placeholder="123 45 6789" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="id_number">Driver's License or State ID Number*</label>
-                                            <input type="text" id="id_number" placeholder="123 4454 5884 7483" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="single-input">
-                                            <label for="issue_date">ID Issue Date*</label>
-                                            <input type="text" id="issue_date" placeholder="MM-YY" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="single-input">
-                                            <label for="expiry_date">ID Expiry Date*</label>
-                                            <input type="text" id="expiry_date" placeholder="MM-YY" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="file">Upload ID Front*</label>
-                                            <input type="file" id="file" name="file" multiple required>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="single-input">
-                                            <label for="file">Upload ID Back*</label>
-                                            <input type="file" id="file" name="file" multiple required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="single-input d-flex align-items-center">
-                                            <div class="checkbox_wrapper">
-                                                <input type="checkbox" required/>
-                                                <label></label>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="single-input">
+                                                <label for="social_number">Social Security Number*</label>
+                                                <input type="text" id="social_number" placeholder="123 45 6789" required>
                                             </div>
-                                            <span class="check_span">By clicking submit, you agree to VintageCredit's Privacy Policy, T&C & E-sign and Communication Authorization.</span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="btn-area text-center">
-                                    <button class="cmn-btn">Submit</button>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="id_number">Driver's License or State ID Number*</label>
+                                                <input type="text" id="id_number" placeholder="123 4454 5884 7483" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="single-input">
+                                                <label for="issue_date">ID Issue Date*</label>
+                                                <input type="text" id="issue_date" placeholder="MM-YY" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="single-input">
+                                                <label for="expiry_date">ID Expiry Date*</label>
+                                                <input type="text" id="expiry_date" placeholder="MM-YY" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="file">Upload ID Front*</label>
+                                                <input type="file" id="file" name="file" multiple required>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="single-input">
+                                                <label for="file">Upload ID Back*</label>
+                                                <input type="file" id="file" name="file" multiple required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="single-input d-flex align-items-center">
+                                                <div class="checkbox_wrapper">
+                                                    <input type="checkbox" required/>
+                                                    <label></label>
+                                                </div>
+                                                <span class="check_span">By clicking submit, you agree to VintageCredit's Privacy Policy, T&C & E-sign and Communication Authorization.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-area text-center">
+                                        <button class="cmn-btn" type="button" onclick="prevStep(3)">Previous</button>
+                                        <button class="cmn-btn" type="submit">Submit</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -380,6 +398,17 @@
     <!-- Footer Area End -->
 
     <!--==================================================================-->
+    <script>
+        function nextStep(step) {
+            document.getElementById('step' + step).style.display = 'none';
+            document.getElementById('step' + (step + 1)).style.display = 'block';
+        }
+
+        function prevStep(step) {
+            document.getElementById('step' + step).style.display = 'none';
+            document.getElementById('step' + (step - 1)).style.display = 'block';
+        }
+    </script>
     <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-ui.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
