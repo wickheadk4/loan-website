@@ -154,15 +154,15 @@
                                             Loan Term (years):
                                         </h6>
                                         <label class="single-radio">12 Months
-                                            <input type="radio" value="12" name="loanTerm" id="loanTerm">
+                                            <input type="radio" value="12" name="loanTerm" id="twelve">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="single-radio">24 Months
-                                            <input type="radio" value="24" name="loanTerm" id="loanTerm">
+                                            <input type="radio" value="24" name="loanTerm" id="twenty-four">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="single-radio">36 Months
-                                            <input type="radio" value="36" name="loanTerm" id="loanTerm">
+                                            <input type="radio" value="36" name="loanTerm" id="Thirty-six">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -309,7 +309,7 @@
             function calculate() {
             var loanAmount = parseFloat(document.getElementById("loanAmount").value);
             var apr = parseFloat(document.getElementById("apr").value);
-            var loanTerm = parseFloat(document.getElementById("loanTerm").value);
+            var loanTerm = parseFloat(document.querySelector('input[name="loanTerm"]:checked').value);
                 
             var monthlyInterestRate = apr / 12 / 100; 
             var numerator = loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, loanTerm);
@@ -318,7 +318,7 @@
 
             document.getElementById("monthlyPayment").innerHTML = "$" + monthlyPayment.toFixed(2);
             document.getElementById("loan-amount").innerHTML = "$" + document.getElementById("loanAmount").value;
-            document.getElementById("loan-term").innerHTML = document.getElementById("loanTerm").value + " months";
+            document.getElementById("loan-term").innerHTML = loanTerm + " months";
             document.getElementById("APR").innerHTML = parseFloat(document.getElementById("apr").value) + "%";
 
             }
