@@ -90,7 +90,7 @@
                                 <h2 class="title">Apply for a loan</h2>
                                 <p>Please fill the form below. We will get in touch with you within 1-2 business days, to request all necessary details</p>
                             </div>
-                            <form action="#">
+                            <form action="#" id="formContainer">
                                 <div id="step1" class="form-step">
                                     <div style="padding: 20px 0px;">
                                         <h4>Step 1. Personal Information</h4>
@@ -398,19 +398,6 @@
     <!-- Footer Area End -->
 
     <!--==================================================================-->
-    <script>
-        function nextStep(step) {
-            document.getElementById('step' + step).style.display = 'none';
-            document.getElementById('step' + (step + 1)).style.display = 'block';
-            document.getElementById('step' + (step + 1)).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function prevStep(step) {
-            document.getElementById('step' + step).style.display = 'none';
-            document.getElementById('step' + (step - 1)).style.display = 'block';
-            document.getElementById('step' + (step - 1)).scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
     <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-ui.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

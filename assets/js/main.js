@@ -107,3 +107,20 @@ function calculate() {
   document.getElementById("loan-term").innerHTML = loanTerm + " months";
   document.getElementById("APR").innerHTML = apr + "%";
 }
+
+function nextStep(step) {
+  document.getElementById('step' + step).style.display = 'none';
+  document.getElementById('step' + (step + 1)).style.display = 'block';
+  scrollToFormTop();
+}
+
+function prevStep(step) {
+  document.getElementById('step' + step).style.display = 'none';
+  document.getElementById('step' + (step - 1)).style.display = 'block';
+  scrollToFormTop();
+}
+
+function scrollToFormTop() {
+  var formContainer = document.getElementById('formContainer');
+  formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
