@@ -136,13 +136,20 @@
                             <div class="form-group">
                                 <div class="range-amount">
                                     <h5 class="d-flex align-items-center">
-                                        <label for="apr">Annual Percentage Rate (%)</label>
+                                        <label for="loanType">Loan Type</label>
                                     </h5>
                                 </div>
                                 <div class="row" style="padding-top: 20px;">
                                     <div class="col-12">
                                         <div class="single-input">
-                                            <input type="number" id="apr" placeholder="Enter APR">
+                                            <select id="loanType" name="home_ownership" required>
+                                                <option value="personal">Personal Loan</option>
+                                                <option value="bad_credit">Loan for Bad Credit</option>
+                                                <option value="auto">Auto Loan</option>
+                                                <option value="payday">Payday Loan</option>
+                                                <option value="retirement">Retirement Loan</option>
+                                                <option value="consolidation">Debt Consolidation Loan</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -307,8 +314,18 @@
         <!--==================================================================-->
         <script>
             function calculate() {
+                var apr_dict = {
+                        personal: 4.5,
+                        bad_credit: 3.7,
+                        payday: 4.3,
+                        auto: 6.8,
+                        retirement: 5.6,
+                        consolidation: 5.8
+                        };
             var loanAmount = parseFloat(document.getElementById("loanAmount").value);
-            var apr = parseFloat(document.getElementById("apr").value);
+            var loanType = document.getElementById("loanType").value;
+            var apr = apr_dict[loanType];// parseFloat(document.getElementById("apr").value);
+            
             var loanTerm = parseFloat(document.querySelector('input[name="loanTerm"]:checked').value);
                 
             var monthlyInterestRate = apr / 12 / 100; 
@@ -319,8 +336,7 @@
             document.getElementById("monthlyPayment").innerHTML = "$" + monthlyPayment.toFixed(2);
             document.getElementById("loan-amount").innerHTML = "$" + document.getElementById("loanAmount").value;
             document.getElementById("loan-term").innerHTML = loanTerm + " months";
-            document.getElementById("APR").innerHTML = parseFloat(document.getElementById("apr").value) + "%";
-
+            document.getElementById("APR").innerHTML = apr + "%";
             }
         
           </script>
