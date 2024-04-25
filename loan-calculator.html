@@ -195,28 +195,33 @@
                                 <div class="col-md-6">
                                     <div class="radio-area">
                                         <h6>
-                                            <label for="loanTerm">Loan Term (years):</label>
+                                            Loan Term (years):
                                         </h6>
-                                        <label class="single-radio">5/1 arm variable
-                                            <input type="radio" checked="checked" name="radio">
+                                        <label class="single-radio">12 Months
+                                            <input type="radio" value="12" checked="checked" name="loanTerm" id="loanTerm">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="single-radio">15 Year fixed
-                                            <input type="radio" name="radio">
+                                        <label class="single-radio">24 Months
+                                            <input type="radio" value="24" name="loanTerm" id="loanTerm">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="single-radio">30 Year fixed
-                                            <input type="radio" name="radio">
+                                        <label class="single-radio">36 Months
+                                            <input type="radio" value="36" name="loanTerm" id="loanTerm">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
+                            <div class="btn-area">
+                                <button onclick="calculate()" class="cmn-btn">Calculate</button>
+                            </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="content-box text-center">
                                 <p class="mdr">Your Total Payment will be</p>
-                                <h2 class="mb-60">$984</h2>
+                                <h2 class="mb-60">$
+                                    <input type="text" id="monthlyPayment" readonly>
+                                </h2>
                                 <div class="info-block mb-60 d-flex align-items-center justify-content-between">
                                     <div class="info-single text-center">
                                         <span>Rate</span>
@@ -709,6 +714,21 @@
         <!-- Footer Area End -->
 
         <!--==================================================================-->
+        <script>
+            function calculate() {
+            var loanAmount = parseFloat(document.getElementById("loanAmount").value);
+            var apr = parseFloat(document.getElementById("apr").value) / 100;
+            var loanTerm = parseFloat(document.getElementById("loanTerm").value);
+        
+            var monthlyInterestRate = apr / 12;
+            var numberOfPayments = loanTerm;
+        
+            var monthlyPayment = loanAmount * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
+        
+            document.getElementById("monthlyPayment").value = monthlyPayment.toFixed(2);
+            }
+        
+          </script>
         <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery-ui.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
