@@ -218,22 +218,20 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="content-box text-center">
-                                <p class="mdr">Your Total Payment will be</p>
-                                <h2 class="mb-60">$
-                                    <input type="text" id="monthlyPayment" readonly>
-                                </h2>
+                                <p class="mdr">Your Monthly Payment will be</p>
+                                <h2 class="mb-60" id="monthlyPayment">$0</h2>
                                 <div class="info-block mb-60 d-flex align-items-center justify-content-between">
                                     <div class="info-single text-center">
-                                        <span>Rate</span>
-                                        <h6>5.250%</h6>
+                                        <span>Amount</span>
+                                        <h6 id="loan-amount">$0</h6>
                                     </div>
                                     <div class="info-single text-center">
                                         <span>APR</span>
-                                        <h6>4.418</h6>
+                                        <h6 id="APR">0%</h6>
                                     </div>
                                     <div class="info-single text-center">
-                                        <span>Points</span>
-                                        <h6>0.325</h6>
+                                        <span>Term</span>
+                                        <h6 id="loan-term">0 months</h6>
                                     </div>
                                 </div>
                                 <div class="btn-area">
@@ -725,7 +723,11 @@
         
             var monthlyPayment = loanAmount * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
         
-            document.getElementById("monthlyPayment").value = monthlyPayment.toFixed(2);
+            document.getElementById("monthlyPayment").innerHTML = "$" + monthlyPayment.toFixed(2);
+            document.getElementById("loan-amount").innerHTML = "$" + document.getElementById("loanAmount").value;
+            document.getElementById("loan-term").innerHTML = document.getElementById("loanTerm").value + " months";
+            document.getElementById("APR").innerHTML = parseFloat(document.getElementById("apr").value) + "%";
+
             }
         
           </script>
