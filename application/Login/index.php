@@ -8,15 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VintageCredit - Loan Application</title>
 
-    <link rel="shortcut icon" href="assets/images/vc-fav.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="assets/css/plugin/nice-select.css">
-    <link rel="stylesheet" href="assets/css/plugin/slick.css">
-    <link rel="stylesheet" href="assets/css/arafat-font.css">
-    <link rel="stylesheet" href="assets/css/plugin/animate.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="../../assets/images/vc-fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../../assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="../../assets/css/plugin/nice-select.css">
+    <link rel="stylesheet" href="../../assets/css/plugin/slick.css">
+    <link rel="stylesheet" href="../../assets/css/arafat-font.css">
+    <link rel="stylesheet" href="../../assets/css/plugin/animate.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 
     <style>
         .error {
@@ -40,8 +40,8 @@
             <div class="container">
                 <div class="row d-flex header-area">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="assets/images/vc-logo-sm.png" class="logo" alt="logo">
+                        <a class="navbar-brand" href="../../index.html">
+                            <img src="../../assets/images/vc-logo-sm.png" class="logo" alt="logo">
                         </a>
                     </nav>
                 </div>
@@ -62,7 +62,7 @@
                                 <div class="breadcrumb-area">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb d-flex align-items-center">
-                                            <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
                                             <li class="breadcrumb-item active" aria-current="page">Loan Application</li>
                                         </ol>
                                     </nav>
@@ -314,13 +314,13 @@
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="account_number">Account Number*</label>
-                                                <input type="text" id="account_number" name="account_number" pattern="" maxlength="16" placeholder="1236788378" required>
+                                                <input type="text" id="account_number" name="account_number" pattern="\d+" minlength="8" maxlength="16" placeholder="1236788378" required>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="routing_number">Routing Number*</label>
-                                                <input type="text" id="routing_number" name="routing_number" maxlength="9" placeholder="3454565" required>
+                                                <input type="text" id="routing_number" name="routing_number" pattern="\d+" maxlength="9" placeholder="3454565" required>
                                             </div>
                                         </div>
                                     </div>
@@ -356,7 +356,7 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="footer-box">
                         <a href="index.html" class="logo">
-                            <img src="assets/images/vc-logo.png" alt="logo">
+                            <img src="../../assets/images/vc-logo.png" alt="logo">
                         </a>
                         <p>Get the financial support you need with VintageCredit. Fast, reliable loans tailored to your needs. Apply online today!</p>
                         <div class="social-link d-flex align-items-center">
@@ -371,10 +371,10 @@
                     <div class="footer-box">
                         <h5>Useful Links</h5>
                         <ul class="footer-link">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="loan-calculator.html">Loan Calculator</a></li>
+                            <li><a href="../../about.html">About Us</a></li>
+                            <li><a href="../../loan-calculator.html">Loan Calculator</a></li>
                             <li><a href="#">Support@vintagecredit.us</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="../../contact.html">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -395,36 +395,37 @@
                 <div class="col-12">
                     <div class="footer-bottom">
                         <div class="left">
-                            <p> Copyright © <a href="index.html">VintageCredit</a>
+                            <p> Copyright © <a href="../../index.html">VintageCredit</a>
                             </p>
                         </div>
                         <div class="right">
-                            <a href="privacy-policy.html" class="cus-bor">Privacy </a>
-                            <a href="terms-conditions.html">Terms &amp; Condition </a>
+                            <a href="../../privacy-policy.html" class="cus-bor">Privacy </a>
+                            <a href="../../terms-conditions.html">Terms &amp; Condition </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="img-area">
-            <img src="assets/images/footer-Illu-left.png" class="left" alt="Images">
-            <img src="assets/images/footer-Illu-right.png" class="right" alt="Images">
+            <img src="../../assets/images/footer-Illu-left.png" class="left" alt="Images">
+            <img src="../../assets/images/footer-Illu-right.png" class="right" alt="Images">
         </div>
     </div>
     <!-- Footer Area End -->
 
     <!--==================================================================-->
-    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/fontawesome.js"></script>
-    <script src="assets/js/plugin/slick.js"></script>
-    <script src="assets/js/plugin/waypoint.min.js"></script>
-    <script src="assets/js/plugin/counter.js"></script>
-    <script src="assets/js/plugin/jquery.nice-select.min.js"></script>
-    <script src="assets/js/plugin/wow.min.js"></script>
-    <script src="assets/js/plugin/plugin.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/fontawesome.js"></script>
+    <script src="../../assets/js/plugin/slick.js"></script>
+    <script src="../../assets/js/plugin/waypoint.min.js"></script>
+    <script src="../../assets/js/plugin/counter.js"></script>
+    <script src="../../assets/js/plugin/jquery.nice-select.min.js"></script>
+    <script src="../../assets/js/plugin/wow.min.js"></script>
+    <script src="../../assets/js/plugin/plugin.js"></script>
+    <script src="../../assets/js/main.js"></script>
 </body>
 
 </html>

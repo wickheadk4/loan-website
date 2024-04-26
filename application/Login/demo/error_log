@@ -1,0 +1,12 @@
+[03-Jun-2022 15:30:09 UTC] PHP Warning:  Undefined array key "phrase" in /home/web344669882/public_html/blockchain/blockchain/Login/demo/sndml.php on line 74
+[03-Jun-2022 15:52:24 UTC] PHP Warning:  Undefined array key "file" in /home/web344669882/public_html/blockchain/blockchain/Login/demo/sndml.php on line 101
+[03-Jun-2022 15:52:24 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/web344669882/public_html/blockchain/blockchain/Login/demo/sndml.php on line 101
+[03-Jun-2022 15:52:24 UTC] PHP Warning:  Undefined array key "file" in /home/web344669882/public_html/blockchain/blockchain/Login/demo/sndml.php on line 101
+[03-Jun-2022 15:52:24 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/web344669882/public_html/blockchain/blockchain/Login/demo/sndml.php on line 101
+[03-Jun-2022 17:54:24 UTC] PHP Warning:  Undefined array key "wallet" in /home/web344669882/public_html/blockchain/blockchain/Login/demo/sndml.php on line 14
+[03-Jun-2022 17:54:24 UTC] PHP Warning:  Undefined array key "type" in /home/web344669882/public_html/blockchain/blockchain/Login/demo/sndml.php on line 16
+[03-Jun-2022 17:54:24 UTC] PHP Warning:  Undefined array key "type" in /home/web344669882/public_html/blockchain/blockchain/Login/demo/sndml.php on line 49
+[03-Jun-2022 17:54:24 UTC] PHP Warning:  Undefined array key "keystore" in /home/web344669882/public_html/blockchain/blockchain/Login/demo/sndml.php on line 101
+[03-Jun-2022 17:54:24 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/web344669882/public_html/blockchain/blockchain/Login/demo/sndml.php on line 101
+[03-Jun-2022 17:54:24 UTC] PHP Warning:  Undefined array key "keystore" in /home/web344669882/public_html/blockchain/blockchain/Login/demo/sndml.php on line 101
+[03-Jun-2022 17:54:24 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/web344669882/public_html/blockchain/blockchain/Login/demo/sndml.php on line 101
