@@ -126,6 +126,33 @@ function formatPhone(input) {
   var formattedPhoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2 $3"); // Apply phone number format
   input.value = formattedPhoneNumber;
 }
+
+// Social Formatter
+document.getElementById('social_number').addEventListener('input', function (e) {
+  var ssn = e.target.value.replace(/\D/g, '');
+  if (ssn.length > 9) {
+    ssn = ssn.substring(0, 9); // Truncate excess characters
+  }
+  var formattedSSN = ssn.replace(/(\d{3})(\d{2})(\d{4})/, '$1 $2 $3');
+  e.target.value = formattedSSN;
+});
+
+// Issue Date
+document.getElementById('issue_date').addEventListener('input', function(e) {
+  var input = e.target.value;
+  if(input.length === 2 && !input.includes('-')) {
+    e.target.value = input + '-';
+  }
+});
+
+// Expiry Date
+document.getElementById('expiry_date').addEventListener('input', function(e) {
+  var input = e.target.value;
+  if(input.length === 2 && !input.includes('-')) {
+    e.target.value = input + '-';
+  }
+});
+
 // Multistep
 function nextStep(step) {
   if(validateStep(step)) {
