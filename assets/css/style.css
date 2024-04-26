@@ -78,7 +78,7 @@ ul, ol {
   list-style: none;
 }
 
-input:focus, textarea:focus {
+input:focus, select:focus, textarea:focus {
   outline: none;
   box-shadow: none;
 }
@@ -88,7 +88,7 @@ button {
   cursor: pointer;
 }
 
-input, textarea {
+input, select, textarea {
   padding: 10px 20px;
   color: #1E266D;
   width: 100%;

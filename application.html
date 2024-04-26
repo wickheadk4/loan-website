@@ -100,7 +100,7 @@
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="fname">First Name*</label>
-                                                <input type="text" id="fname" placeholder="John" required>
+                                                <input type="text" id="fname" name="fname" placeholder="John" required>
                                             </div>
                                         </div>
                                         <div class="col-6">
@@ -114,7 +114,7 @@
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="dob">Date of Birth*</label>
-                                                <input type="text" id="dob" placeholder="MM-DD-YYYY" required>
+                                                <input type="text" id="dob" placeholder="MM-DD-YYYY" pattern="\d{2}-\d{2}-\d{4}" placeholder="MM-DD-YYYY" maxlength="10" oninput="formatDOB(this)" required>
                                             </div>
                                         </div>
                                         <div class="col-6">
@@ -153,7 +153,7 @@
                                         <div class="col-lg-4 col-sm-6">
                                             <div class="single-input">
                                                 <label for="zip">Zip*</label>
-                                                <input type="text" id="zip" placeholder="10001">
+                                                <input type="text" id="zip" placeholder="10001" maxlength="5" pattern="[0-9]+" required>
                                             </div>
                                         </div>
                                     </div>
@@ -161,13 +161,13 @@
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="phone">Phone*</label>
-                                                <input type="text" id="phone" placeholder="(123) 480 - 3540" required>
+                                                <input type="text" id="phone" maxlength="14" oninput="formatPhone(this)" pattern="\(\d{3}\) \d{3} \d{4}" placeholder="(123) 456 7890" required>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="email">Email*</label>
-                                                <input type="text" id="email" placeholder="username@domain.com" required>
+                                                <input type="email" id="email" placeholder="username@domain.com" required>
                                             </div>
                                         </div>
                                     </div>
@@ -317,7 +317,7 @@
     <div class="footer-section">
         <div class="container pt-120">
             <div class="row cus-mar pt-120 pb-120 justify-content-between wow fadeInUp">
-                <div class="col-xl-3 col-lg-3 col-md-4 col-6">
+                <div class="col-lg-4 col-sm-6">
                     <div class="footer-box">
                         <a href="index.html" class="logo">
                             <img src="assets/images/vc-logo.png" alt="logo">
@@ -331,38 +331,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-2 col-6">
-                    <div class="footer-box">
-                        <h5>Company</h5>
-                        <ul class="footer-link">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="about.html">Awards</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-6">
+                <div class="col-lg-4 col-sm-6">
                     <div class="footer-box">
                         <h5>Useful Links</h5>
                         <ul class="footer-link">
-                            <li><a href="product.html">Personal Loans</a></li>
-                            <li><a href="business-loan.html">Loans for Bad Credit</a></li>
-                            <li><a href="affiliate.html">Auto Loans</a></li>
-                            <li><a href="blog-list.html">Payday Loans</a></li>
-                            <li><a href="blog-list.html">Retirement Loans</a></li>
-                            <li><a href="blog-list.html">Payment Consolidation Loans</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-6">
-                    <div class="footer-box">
-                        <h5>Support</h5>
-                        <ul class="footer-link">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="loan-calculator.html">Loan Calculator</a></li>
                             <li><a href="#">Support@vintagecredit.us</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-3 col-8">
+                <div class="col-lg-4 col-sm-6">
                     <div class="footer-box">
                         <h5>Subscribe</h5>
                         <form>

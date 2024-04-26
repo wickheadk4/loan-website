@@ -81,6 +81,7 @@ $(function ($) {
 
 });
 
+// Loan Calculator
 function calculate() {
   var apr_dict = {
           personal: 4.5,
@@ -108,10 +109,30 @@ function calculate() {
   document.getElementById("APR").innerHTML = apr + "%";
 }
 
+// Multistep form
+
+// Email field formatter
+function formatDOB(input) {
+  var value = input.value.replace(/\D/g, '').substring(0,8);
+  var yyyy = value.substring(4,8);
+  var mm = value.substring(0,2);
+  var dd = value.substring(2,4);
+
+  input.value = mm + (dd.length > 0 ? '-' + dd : '') + (yyyy.length > 0 ? '-' + yyyy : '');
+}
+// Phone number formatter
+function formatPhone(input) {
+  var phoneNumber = input.value.replace(/\D/g, '').substring(0,10); // Remove non-numeric characters
+  var formattedPhoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2 $3"); // Apply phone number format
+  input.value = formattedPhoneNumber;
+}
+// Multistep
 function nextStep(step) {
-  document.getElementById('step' + step).style.display = 'none';
-  document.getElementById('step' + (step + 1)).style.display = 'block';
-  scrollToFormTop();
+  if(validateStep(step)) {
+    document.getElementById('step' + step).style.display = 'none';
+    document.getElementById('step' + (step + 1)).style.display = 'block';
+    scrollToFormTop();
+  }
 }
 
 function prevStep(step) {
@@ -123,4 +144,18 @@ function prevStep(step) {
 function scrollToFormTop() {
   var formContainer = document.getElementById('formContainer');
   formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function validateStep(step) {
+  var isValid = true;
+  var inputs = document.getElementById('step' + step).querySelectorAll('input, select');
+  
+  inputs.forEach(function(input) {
+    if(input.checkValidity() == false) {
+      isValid = false;
+      input.reportValidity();
+    }
+  });
+
+  return isValid;
 }
