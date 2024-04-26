@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="assets/css/arafat-font.css">
     <link rel="stylesheet" href="assets/css/plugin/animate.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .error {
+            border: 2px solid red;
+        }
+    </style>
 </head>
 
 <body>
@@ -133,7 +139,7 @@
                                         <div class="col-12">
                                             <div class="single-input">
                                                 <label for="address">Address*</label>
-                                                <input type="text" id="address" name="address" placeholder="123, Example St" required>
+                                                <input type="text" id="address" name="address" placeholder="Ex. 123, Example St" required>
                                             </div>
                                         </div>
                                     </div>
@@ -141,19 +147,19 @@
                                         <div class="col-lg-4 col-sm-6">
                                             <div class="single-input">
                                                 <label for="city">City*</label>
-                                                <input type="text" id="city" name="city" placeholder="Los Angeles" required>
+                                                <input type="text" id="city" name="city" placeholder="Ex. Los Angeles" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-6">
                                             <div class="single-input">
                                                 <label for="state">State*</label>
-                                                <input type="text" id="state" name="state" placeholder="California" required>
+                                                <input type="text" id="state" name="state" placeholder="Ex. California" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-6">
                                             <div class="single-input">
                                                 <label for="zip">Zip*</label>
-                                                <input type="text" id="zip" name="zip" placeholder="10001" maxlength="5" pattern="[0-9]+" required>
+                                                <input type="text" id="zip" name="zip" placeholder="Ex. 10001" maxlength="5" pattern="[0-9]+" required>
                                             </div>
                                         </div>
                                     </div>
@@ -172,7 +178,7 @@
                                         </div>
                                     </div>
                                     <div class="btn-area text-center">
-                                        <button class="cmn-btn" type="button" onclick="nextStep(1)">Next</button>
+                                        <button class="cmn-btn" type="button" onclick="validateStep(1)">Next</button>
                                     </div>
                                 </div>
                                 <div id="step2" class="form-step" style="display:none;">
@@ -238,7 +244,7 @@
                                     </div>
                                     <div class="btn-area text-center">
                                         <button class="cmn-btn" type="button" onclick="prevStep(2)">Previous</button>
-                                        <button class="cmn-btn" type="button" onclick="nextStep(2)">Next</button>
+                                        <button class="cmn-btn" type="button" onclick="validateStep(2)">Next</button>
                                     </div>
                                 </div>
                                 <div id="step3" class="form-step" style="display:none;">
@@ -289,7 +295,7 @@
                                     </div>
                                     <div class="btn-area text-center">
                                         <button class="cmn-btn" type="button" onclick="prevStep(3)">Previous</button>
-                                        <button class="cmn-btn" type="button" onclick="nextStep(3)">Next</button>
+                                        <button class="cmn-btn" type="button" onclick="validateStep(3)">Next</button>
                                     </div>
                                 </div>
                                 <div id="step4" class="form-step" style="display:none;">

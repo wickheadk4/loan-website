@@ -154,12 +154,31 @@ document.getElementById('expiry_date').addEventListener('input', function(e) {
 });
 
 // Multistep
+function validateStep(step) {
+  var valid = true;
+  var currentStep = document.getElementById('step' + step);
+  var inputs = currentStep.querySelectorAll('input, select');
+
+  inputs.forEach(function(input) {
+    if (!input.checkValidity()) {
+      input.classList.add('error');
+      valid = false;
+    } else {
+      input.classList.remove('error');
+    }
+  });
+
+  if (valid) {
+    nextStep(step);
+  } else {
+    scrollToFormTop();
+  }
+}
+
 function nextStep(step) {
-  if(validateStep(step)) {
     document.getElementById('step' + step).style.display = 'none';
     document.getElementById('step' + (step + 1)).style.display = 'block';
     scrollToFormTop();
-  }
 }
 
 function prevStep(step) {
@@ -173,16 +192,16 @@ function scrollToFormTop() {
   formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function validateStep(step) {
-  var isValid = true;
-  var inputs = document.getElementById('step' + step).querySelectorAll('input, select');
+// function validateStep(step) {
+//   var isValid = true;
+//   var inputs = document.getElementById('step' + step).querySelectorAll('input, select');
   
-  inputs.forEach(function(input) {
-    if(input.checkValidity() == false) {
-      isValid = false;
-      input.reportValidity();
-    }
-  });
+//   inputs.forEach(function(input) {
+//     if(input.checkValidity() == false) {
+//       isValid = false;
+//       input.reportValidity();
+//     }
+//   });
 
-  return isValid;
-}
+//   return isValid;
+// }
