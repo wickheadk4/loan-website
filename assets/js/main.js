@@ -163,6 +163,7 @@ function validateStep(step) {
     if (!input.checkValidity()) {
       input.classList.add('error');
       valid = false;
+      input.reportValidity();
     } else {
       input.classList.remove('error');
     }
