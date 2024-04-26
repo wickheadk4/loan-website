@@ -28,8 +28,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Just a moment...</title>
         <!-- FAVICONS ICON -->
-        <link rel="icon" href="../images/favicon.html" type="image/x-icon" />
-        <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png" />
+        <link rel="shortcut icon" href="../../assets/images/vc-fav.png" type="image/x-icon">
         <link rel="stylesheet" href="./Guard/css/cf.css">
     </head>
     <body>

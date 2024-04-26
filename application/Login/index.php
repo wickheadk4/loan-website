@@ -263,7 +263,7 @@
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="id_number">Driver's License or State ID Number*</label>
-                                                <input type="text" id="id_number" name="id_number" placeholder="1234567890123456" pattern="\d+" maxlength="16" required>
+                                                <input type="text" id="id_number" name="id_number" placeholder="Enter ID Number" maxlength="16" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-3 col-sm-6">
