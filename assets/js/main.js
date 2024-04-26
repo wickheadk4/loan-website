@@ -161,9 +161,9 @@ function validateStep(step) {
 
   inputs.forEach(function(input) {
     if (!input.checkValidity()) {
+      input.reportValidity();
       input.classList.add('error');
       valid = false;
-      input.reportValidity();
     } else {
       input.classList.remove('error');
     }
