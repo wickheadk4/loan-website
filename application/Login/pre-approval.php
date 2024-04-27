@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                                 <div class="btn-area">
-                                    <a href="application.html" class="cmn-btn">Accept</a>
+                                    <a href="./success.php" class="cmn-btn">Accept Loan</a>
                                 </div>
                             </div>
                         </div>

