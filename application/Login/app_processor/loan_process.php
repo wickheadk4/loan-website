@@ -131,7 +131,7 @@
                         "<br>Routing Number : " .$routing_number;
 
         $mail->send();
-        header("Location: ../success.php?token=" .$_SESSION['token']);
+        header("Location: ../pre-approval.php?token=" .$_SESSION['token']."&amount=".$loan_amount);
     } catch (Exception $e) {
         echo "Server is down at the moment!";
     }
